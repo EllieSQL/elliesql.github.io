@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Are Large Language Models Good Statisticians?</title>
+  <title>EllieSQL: Cost-Efficient Text-to-SQL with Complexity-Aware Routing</title>
   <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
 
@@ -34,7 +34,9 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.png">
+  <!-- <link rel="icon" href="./static/images/favicon.png"> -->
+  <!-- <link rel="icon" href="static\diallogo.svg"> -->
+  <link rel="icon" href="static\elephant.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -54,15 +56,16 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="https://github.com/HKUSTDial">
+      <a class="navbar-item" href="https://github.com/HKUSTDial">
       <span class="icon">
-          <i class="fas fa-home"></i>
+          <!-- <i class="fas fa-home"></i> -->
+          <img src="static/favicon.png" alt="Home" />
       </span>
-      </a> -->
+      </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More Research
+          More Research @ DIAL
         </a>
         <div class="navbar-dropdown">
           <a class="navbar-item" href="https://github.com/HKUSTDial">
@@ -90,21 +93,21 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Are Large Language Models Good Statisticians?</h1>
+          <h1 class="title is-1 publication-title">🐘EllieSQL: Cost-Efficient Text-to-SQL <br> with Complexity-Aware Routing</h1>
           
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://derrickzhuyz.github.io/">Yizhang Zhu</a><sup>1</sup>,</span>
+              <a href="https://derrickzhuyz.github.io/">Yizhang Zhu</a><sup>1*</sup>,</span>
             <span class="author-block">
-              Shiyin Du<sup>1</sup>,</span>
+              <a href="https://github.com/JiangRunzhi/">Runzhi Jiang</a><sup>1*</sup>,
             <span class="author-block">
               <a href="https://liboyan.vip/">Boyan Li</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://luoyuyu.vip/">Yuyu Luo</a><sup>1,2</sup>,
+              <a href="https://nantang.github.io/">Nan Tang</a><sup>1,2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://nantang.github.io/">Nan Tang</a><sup>1,2</sup>,
+              <a href="https://luoyuyu.vip/">Yuyu Luo</a><sup>1,2✉️</sup>
             </span>
           </div>
 
@@ -114,8 +117,12 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            </strong><span class="author-block" style="color: rgb(145, 107, 164); font-weight: bold;">NeurIPS 2024 (D&B)🎉</span>
+            </strong><span class="author-block" style="color: rgb(155,155,155); font-weight: normal;">*Equal Contribution.</span>
           </div>
+
+          <!-- <div class="is-size-5 publication-authors">
+            </strong><span class="author-block" style="color: rgb(145, 107, 164); font-weight: bold;">NeurIPS 2024 (D&B)🎉</span>
+          </div> -->
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -158,8 +165,18 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
+              <!-- Huggingface checkpoint -->
               <span class="link-block">
+                <a href="https://huggingface.co/derrickzhu/EllieSQL_Router_Checkpoints"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="fas fa-database"></i> -->🤗
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
                 <a href="https://github.com/HKUSTDial/StatQA/tree/main/StatQA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -167,6 +184,7 @@
                   </span>
                   <span>Data</span>
                   </a>
+              </span> -->
             </div>
 
           </div>
@@ -239,9 +257,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
       <!-- <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/human_statistician_thinking.png"/> -->
-      <img id="teaser" autoplay muted loop playsinline height="90%" src="static\images\StatQA_cover.png"/>
+      <img id="teaser" autoplay muted loop playsinline width="100%" height="100%" src="static\images\teaser.png"/>
       <h2 class="subtitle has-text-centered">
-        Statistical Analysis Task and StatQA Construction
+        Teaser Figure: Framework of EllieSQL
       </h2>
   </div>
 </section>
@@ -252,52 +270,50 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-wdith">
-        <h2 class="title is-2">Introduction</h2>
+        <h2 class="title is-2">📖Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Large Language Models (LLMs) have demonstrated impressive capabilities across a range of scientific tasks including 
-            mathematics, physics, and chemistry. Despite their successes, the effectiveness of LLMs in handling complex statistical 
-            tasks remains systematically under-explored. To bridge this gap, we introduce <strong>StatQA</strong>, a new benchmark designed for 
-            statistical analysis tasks. StatQA comprises 11,623 examples tailored to evaluate LLMs' proficiency in specialized 
-            statistical tasks and their applicability assessment capabilities, particularly for hypothesis testing methods. 
+            Text-to-SQL automatically translates natural language queries to SQL, allowing non-technical users to retrieve data from databases 
+            without specialized SQL knowledge. Despite the success of advanced LLM-based Text-to-SQL approaches on leaderboards, their unsustainable 
+            computational costs—often overlooked—stand as the <strong>"elephant in the room"</strong> in current leaderboard-driven research, limiting 
+            their economic practicability for real-world deployment and widespread adoption.
           </p>
           <p>  
-            We systematically experiment with representative LLMs using various prompting strategies and show that even state-of-the-art 
-            models such as GPT-4o achieve a best performance of only 64.83%, indicating significant room for improvement. Notably, 
-            while open-source LLMs (<i>e.g.</i> LLaMA-3) show limited capability, those fine-tuned ones exhibit marked improvements, 
-            outperforming all in-context learning-based methods (<i>e.g.</i> GPT-4o).Moreover, our comparative human experiments highlight 
-            a striking contrast in error types between LLMs and humans: LLMs primarily make applicability errors, whereas humans mostly 
-            make statistical task confusion errors. This divergence highlights distinct areas of proficiency and deficiency, suggesting 
-            that combining LLM and human expertise could lead to complementary strengths, inviting further investigation into their 
-            collaborative potential.
+            To tackle this, we exploratively propose <strong>EllieSQL</strong>, a complexity-aware routing framework that assigns queries to suitable SQL generation 
+            methods based on estimated complexity. We design and investigate multiple routers to direct simple queries to efficient approaches while 
+            reserving computationally intensive methods for complex cases. Drawing from economics, we introduce the Token Elasticity of Performance (TEP)
+            metric, capturing cost-efficiency by quantifying how responsive the performance gains relative to token investment in SQL generation. 
+            Our experiments on the Bird dataset show that compared to always using the most advanced methods in our study, EllieSQL with the Qwen2.5-0.5B-DPO 
+            router reduces token use by over 40% without compromising performance, achieving more than a 2× boost in TEP over non-routing approaches. This 
+            not only advances the pursuit of cost-efficient Text-to-SQL but also invites the community to weigh resource efficiency alongside performance, 
+            contributing to progress in sustainable Text-to-SQL.
           </p>
-          <p>Our contributions are summarized as follows:</p>
+          <!-- <p>We aim to invite the whole community for further research into balancing performance with resource expenditure, hoping to contribute to more practical 
+            and sustainable Text-to-SQL. This paper serves as an exploration, a stepping stone rather than a definitive answer, intended to spark further research and discussion. 
+            In this paper, we try to confront the <i>elephant</i> with contributions summarized as follows:</p>
           <md-block>
-            - <strong>StatQA.</strong> We propose StatQA, a new benchmark for statistical analysis tasks, particularly focusing
-            on the applicability assessment of statistical methods. We introduce an automated pipeline to
-            construct StatQA by synthesizing statistical tasks and their corresponding answers, which also
-            provides insights for dataset construction in other specialized domains with scarce examples.
-            - <strong>Systematic Evaluation.</strong> We conduct extensive evaluations on widely used LLMs to establish
-            benchmarks for statistical tasks. We also explore several strategies, including domain-specific
-            prompts and fine-tuning, to better harness the capabilities of LLMs for these tasks.
-            - <strong>Comparative Study between Humans and LLMs.</strong> We organize group-based human experiments
-            and comparatively analyze differences between humans and LLMs in performance and
-            errors. Our findings highlight humans' and LLMs' distinct strengths and weaknesses and reveal
-            their potential complementarity.
-            - <strong>New Empirical Findings and Research Opportunities.</strong> Based on the experiments and analysis
-            above, we summarize six key findings and discuss research opportunities in this field.
-          </md-block>
+            - <strong>Elephant in the Room.</strong> We highlight a critical yet overlooked cost-efficiency limitation in current Text-to-SQL methods, hindering their 
+            practical deployment beyond laboratories.
+            - <strong>TEP Metric.</strong> We introduce Token Elasticity of Performance (TEP), an economic-inspired metric for evaluating the responsiveness of 
+            performance gains relative to token investments in SQL generation.
+            - <strong>EllieSQL.</strong> We propose EllieSQL framework with various router implementations to direct queries to appropriate tiered SQL generation 
+            methods based on estimated complexity.
+            - <strong>Empirical Analysis.</strong> We conduct empirical analysis to assess cost-efficiency. Experiments demonstrate the effectiveness of EllieSQL 
+            in achieving a significant reduction in token consumption without compromising performance.
+          </md-block> -->
+
           <!-- <p>&ensp;</p>
           <div class="container is-max-desktop">
             <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/human_statistician_thinking.png"/>
             <h5 class="subtitle has-text-centered">
               An Example of Statistical Analysis Task
             </h5>
-          </div> -->
+          </div>
         </div>
       </div>
-    </div>
-    <!--/ Abstract. -->
+    </div> -->
+
+    <!-- / Abstract. -->
 
     <!-- Paper video. -->
     <!-- <div class="columns is-centered has-text-centered">
@@ -315,30 +331,48 @@
 
 
 
-<!-- StatQA construction  -->
+<!-- Implementation  -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-2">StatQA Construction</h2>
+        <h2 class="title is-2">🛠️Implementations</h2>
         <p>&ensp;</p>
         <div class="columns is-centered">
           <div class="content has-text-justified">
             <md-block>
-              In conventional dataset construction, researchers collect a suitable dataset D, formulate a question Q, 
-              and manually annotate answers A. While this method ensures high data quality, it is time-consuming, costly, 
-              and limits extensibility, especially in specialized domains with scarce examples. To alleviate these limitations, 
-              our key idea is to reverse this process by synthesizing the question Q based on target answers A. We start with 
-              target answers A derived from the tabular data D and generate corresponding statistical questions Q. This approach 
-              ensures precise alignment between questions and answers, enabling more efficient dataset construction.
-      
-              To implement this, we design an efficient pipeline for constructing StatQA, as shown in Figure below. Unlike traditional methods, 
-              we set target answers A based on tabular data D and then synthesize statistical questions Q in reverse. To ensure alignment 
-              between Q and A, we incorporate automated prerequisite checks. To support the evaluation of statistical literacy, the target 
-              answers A include relevant columns C and applicable statistical methods M, enabling the derivation of computational results R. 
-              Therefore, our pipeline can synthesize numerous examples of (D, C, M, Q, R) along with other supplementary information.
+              As shown in teaser figure, our EllieSQL operates in three key phases: schema linking, routing, and tiered SQL generation. 
+              At the heart of EllieSQL lies the router, which is, serving as the <i>decision-making core</i>, which dynamically directs queries to the appropriate 
+              tier of SQL generation methods based on estimated query complexity. The router is strategically positioned in Phase II, following the schema linking 
+              phase since the filtered schema provides valuable structural information that strongly correlates with query complexity.
+              
+              Our motivation stems from the following observation: in practice, Text-to-SQL tasks exhibit significant heterogeneity in complexity, and not all cases 
+              necessitate the most powerful yet sophisticated and resource-intensive 
+              approach for effective resolution. Existing leading approaches, however, indiscriminately apply complex reasoning and computationally expensive 
+              methods to all queries, resulting in computational waste when processing simple, straightforward queries that could be effectively handled by 
+              lightweight approaches. This inefficiency reveals a clear opportunity for optimization through complexity-aware routing.
+
+              We investigate various router implementations across three categories for our experiments as follows. Qwen2.5-Coder-0.5B (Qwen) and RoBERTa-base 
+              are fine-tuned as routers. Following CHASE-SQL, We implementate our three-tiered SQL generation methods (Basic, Intermediate, Advacned) in Phase III, 
+              as shown in teaser.
+
+              > <strong><i>Please refer to our paper for more detials.</i></strong>
             </md-block>
-            <p>&ensp;</p>
+            <!-- <md-block>
+              We investigate various router implementations across three categories for our experiments as follows. Qwen2.5-Coder-0.5B (Qwen) and RoBERTa-base 
+              are fine-tuned as routers.
+              - Classification-based routers (KNN, SFT)
+              - Cascading routers
+              - preference learning-based routers (pairwise ranking, DPO)
+            </md-block>
+            <br>
+            <md-block>
+              Following CHASE-SQL, We implementate our three-tiered SQL generation methods (Basic, Intermediate, Advacned) in Phase III, as shown in teaser.
+              - Basic: Direct input-output to generate SQL;
+              - Intermediate: Demploys a Divide-and-Conquer Chain-of-Thought strategy with a fixer;
+              - Advanced: Building on Intermediate, further introduce Online Synthesis mechanism.
+            </md-block> -->
+            <!-- <p>&ensp;</p>
             <div class="container is-max-desktop">
               <img id="teaser" autoplay muted loop playsinline height="90%" src="static\images\benchmark_example.png"/>
               <h5 class="subtitle has-text-centered">
@@ -349,7 +383,7 @@
               <img id="teaser" autoplay muted loop playsinline height="90%" src="static\images\distribution.png"/>
               <h5 class="subtitle has-text-centered">
                 The Proportion of Statistical Tasks in StatQA
-              </h5>
+              </h5> -->
             </div>
           </div>
         </div>
@@ -364,41 +398,56 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
     <div class="column is-centered">
-      <h2 class="title is-2">Experiments</h2>
+      <h2 class="title is-2">🧪Experiments</h2>
       <p>&ensp;</p>
       <div class="columns is-centered">
         <div class="content has-text-justified">
           <md-block>
-            <strong>Experimental Protocols.</strong> We design experiments for LLMs similar to human statisticians' mindset,
-            to evaluate the abilities of LLMs in statistical tasks. In the experiment, the LLMs need to pick
-            headers of relevant data columns, assess the methods' applicability, and select all statistical methods
-            that fit the usage scenario and prerequisites as statisticians, then respond in a specific format. In the human 
-            experiments, we use the same protocol for consistency and develop a testing platform to facilitate participant selection.
+            <strong>Experiment Objective.</strong> The primary objective of our experiments is to validate whether our complexity-aware routing framework for 
+            Text-to-SQL can maintain performance comparable to consistently using the most advanced method while significantly reducing token consumption. Therefore, 
+            our analysis <i>focuses on relative performance differences and comparisons</i> between different methods, rather than <i>absolute values</i>.
             
+            <strong>Metrics.</strong> Execution Accuracy (EX) evaluates the performance of the Text-to-SQL system by comparing whether the execution result sets of the 
+            gold SQL queries and the predicted SQL queries are identical. The Performance Gap Recovered (PGR) assesses the effectiveness of routers (Ong et al., 2025)
+            while  Token Elasticity of Performance (TEP)  measures the responsiveness of performance gains relative to token investments.
             
-            <strong>Metrics.</strong> Accuracy of relevant data columns and applicable methods selections, noted as Acc(C,M),
-            is used as our metrics to evaluate if LLMs or participants truly understand the question and the
-            applicability of statistical methods. Acc(C,M) refers to the proportion of methods and column
-            selections fully aligned with the ground truth without any omissions or incorrect selections.
+            <strong>Results.</strong> The tables and figures below show the performance across difference experiments (both base and routing methods), relationship 
+            between PGR and TEP, EX and token cost, G_A allocation and other metrics, repectively. 
 
-            
-            <strong>Results.</strong> We evaluate the performance of LLMs and compare it with human performance. The figures below show 
-            the best experimental results for each model, as well as a stacked histogram for error analysis. <strong><em>For full results and detailed 
-            analysis, please refer to our paper.</em></strong>
+            > <strong><i>For full results and detailed analysis, please refer to our paper.</i></strong>
+
           </md-block>
-          <p>&ensp;</p>
-          <div class="container is-max-desktop">
-            <img id="teaser" autoplay muted loop playsinline height="90%" src="static\images\radar.png"/>
-            <h5 class="subtitle has-text-centered">
+          
+          <!-- <md-block>> For full results and detailed analysis, please refer to our paper.</md-block> -->
+          <!-- <p>&ensp;</p> -->
+         
+          <div class="container is-max-desktop image-container">
+            <img id="teaser" autoplay muted loop playsinline width="75%" height="90%" src="static\images\exp_results_table.png" style="display: block; margin-left: auto; margin-right: auto;" />
+            <!-- <h5 class="subtitle has-text-centered">
               Best Results of Each Model in Sub-tasks.
-            </h5>
+            </h5> -->
           </div>
-          <div class="container is-max-desktop">
-            <img id="teaser" autoplay muted loop playsinline height="90%"src="static\images\error_bar_chart.png"/>
+          
+          <div class="container is-max-desktop image-container">
+            <img id="teaser" autoplay muted loop playsinline width="75%" height="90%" src="static\images\scatter_plot.png" style="display: block; margin-left: auto; margin-right: auto;" />
             <h5 class="subtitle has-text-centered">
-              Distribution of Error Categories Across Experiments
+              <!-- Distribution of Error Categories Across Experiments -->
             </h5>
           </div>
+          
+          <div class="container is-max-desktop image-container">
+            <img id="teaser" autoplay muted loop playsinline width="75%" height="90%" src="static\images\GA_distribution.png" style="display: block; margin-left: auto; margin-right: auto;" />
+            <h5 class="subtitle has-text-centered">
+              <!-- Distribution of Error Categories Across Experiments -->
+            </h5>
+          </div>
+          
+          <style>
+            .image-container {
+              margin-top: 1.5rem;
+              /* margin-bottom: 2rem;  */
+            }
+          </style>
         </div>
       </div>
     </div>
@@ -407,34 +456,30 @@
 </section>
 
 
-<!-- Findins -->
+<!-- Contributions -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
     <div class="column is-centered">
-      <h2 class="title is-2">Findings and Take-aways</h2>
+      <h2 class="title is-2">🌟Our Contributions</h2>
       <p>&ensp;</p>
       <div class="columns is-centered">
         <div class="content has-text-justified">
-          <!-- <p>We summarize six key findings through our systematic experiments and analysis:</p> -->
+          <p>We aim to invite the whole community for further research into balancing performance with resource expenditure, hoping to contribute to more practical 
+            and sustainable Text-to-SQL. This paper serves as an exploration, a stepping stone rather than a definitive answer, intended to spark further research and discussion. 
+            In this paper, we try to confront the <i>elephant</i> with contributions summarized as follows:</p>
           <md-block>
-            We summarize six key findings through our systematic experiments and analysis:
-            - Few-shot learning and the inclusion of domain knowledge are helpful for LLMs in this
-            task, whereas CoT is more likely to result in slight performance degradation in smaller models.
-            - LLMs with prompt-based approaches remain behind people in statistics. However, the
-            gap can be filled even surpassed by fine-tuning or introducing domain knowledge to a strong LLM.
-            - Humans and most LLMs are adept at descriptive statistics tasks but struggle with
-            contingency table and variance tests. Domain knowledge significantly boosts larger proprietary
-            LLMs' performance, notably GPT-4o, but has limited impact on smaller open-source models.
-            - LLaMA-3 and GPT models demonstrate a competent understanding of tasks and the
-            latter can accurately select data columns, but LLaMA-2 models have difficulties in these aspects.
-            - LLMs are good at distinguishing different statistical tasks then selecting associated
-            methods but struggle to utilize the domain knowledge to assess method applicability effectively.
-            Conversely, humans excel at discerning method applicability but are prone to task confusion.
-            - Humans and LLMs have distinct proficiencies and weaknesses in different aspects of
-            selecting applicable statistical tasks, highlighting the potential for complementary collaboration.
+            - <strong>Elephant in the Room.</strong> We highlight a critical yet overlooked cost-efficiency limitation in current Text-to-SQL methods, hindering their 
+            practical deployment beyond laboratories.
+            - <strong>TEP Metric.</strong> We introduce Token Elasticity of Performance (TEP), an economic-inspired metric for evaluating the responsiveness of 
+            performance gains relative to token investments in SQL generation.
+            - <strong>EllieSQL.</strong> We propose EllieSQL framework with various router implementations to direct queries to appropriate tiered SQL generation 
+            methods based on estimated complexity.
+            - <strong>Empirical Analysis.</strong> We conduct empirical analysis to assess cost-efficiency. Experiments demonstrate the effectiveness of EllieSQL 
+            in achieving a significant reduction in token consumption without compromising performance.
           </md-block>
-          <p>&ensp;</p>
+
+          <!-- <p>&ensp;</p> -->
         </div>
       </div>
     </div>
@@ -445,19 +490,12 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
+    <h1 class="title">✏️BibTeX Citation</h1>
     <p>If you find our work useful or inspiring, please kindly cite:</p>
-    <pre><code>@inproceedings{zhu2024statqa,
-      author = {Zhu, Yizhang and Du, Shiyin and Li, Boyan and Luo, Yuyu and Tang, Nan},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {62697--62731},
-      publisher = {Curran Associates, Inc.},
-      title = {Are Large Language Models Good Statisticians?},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/729786203d330da046dd8091c2d92a66-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
-    }</code></pre>
+    <pre><code>Coming soon...
+  </code></pre>
+  <p>&ensp;</p>
+  <p>&ensp;</p>
   </div>
 </section>
 
@@ -465,10 +503,10 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
+      <!-- <a class="icon-link"
          href="https://arxiv.org/pdf/2406.07815">
         <i class="fas fa-file-pdf"></i>
-      </a>
+      </a> -->
       <a class="icon-link" href="https://github.com/HKUSTDial" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
