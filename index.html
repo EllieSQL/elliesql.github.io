@@ -280,11 +280,11 @@
           </p>
           <p>  
             To tackle this, we exploratively propose <strong>EllieSQL</strong>, a complexity-aware routing framework that assigns queries to suitable SQL generation 
-            methods based on estimated complexity. We design and investigate multiple routers to direct simple queries to efficient approaches while 
+            pipelines based on estimated complexity. We investigate multiple routers to direct simple queries to efficient approaches while 
             reserving computationally intensive methods for complex cases. Drawing from economics, we introduce the Token Elasticity of Performance (TEP)
-            metric, capturing cost-efficiency by quantifying how responsive the performance gains relative to token investment in SQL generation. 
-            Our experiments on the Bird dataset show that compared to always using the most advanced methods in our study, EllieSQL with the Qwen2.5-0.5B-DPO 
-            router reduces token use by over 40% without compromising performance, achieving more than a 2× boost in TEP over non-routing approaches. This 
+            metric, capturing cost-efficiency by quantifying the responsiveness of performance gains relative to token investment in SQL generation. 
+            Experiments show that compared to always using the most advanced methods in our study, EllieSQL with the Qwen2.5-0.5B-DPO 
+            router reduces token use by over 40% without compromising performance on Bird development set, achieving more than a 2× boost in TEP over non-routing approaches. This 
             not only advances the pursuit of cost-efficient Text-to-SQL but also invites the community to weigh resource efficiency alongside performance, 
             contributing to progress in sustainable Text-to-SQL.
           </p>
