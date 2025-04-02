@@ -474,9 +474,11 @@
             - <strong>TEP Metric.</strong> We introduce Token Elasticity of Performance (TEP), an economic-inspired metric for evaluating the responsiveness of 
             performance gains relative to token investments in SQL generation.
             - <strong>EllieSQL.</strong> We propose EllieSQL framework with various router implementations to direct queries to appropriate tiered SQL generation 
-            methods based on estimated complexity.
-            - <strong>Empirical Analysis.</strong> We conduct empirical analysis to assess cost-efficiency. Experiments demonstrate the effectiveness of EllieSQL 
-            in achieving a significant reduction in token consumption without compromising performance.
+            pipelines based on estimated complexity.
+            - <strong>Extensive Experiments.</strong> Experiments exhibit the potential and effectiveness of EllieSQL 
+            with various routers. Notably, with the Qwen2.5-0.5B-DPO router, we reduce token use 
+            by over 40% without sacrificing performance compared with consistently deploying the 
+            most advanced SQL generation pipeline, achieving more than a 2× boost in TEP.
           </md-block>
 
           <!-- <p>&ensp;</p> -->
